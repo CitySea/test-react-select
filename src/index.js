@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { memo, useState, useCallback, useRef, useEffect } from "react";
 import View from "./view.js";
 

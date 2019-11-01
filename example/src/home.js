@@ -1,8 +1,8 @@
 /* eslint-disable */
-import React , {useState, useEffect} from 'react'
+import React , {useState, useEffect, memo} from 'react'
 import ExepocSelect from '../../src/index.js'
 
-function App () {
+const Index =memo(() => {
   const stateTest = useState('');
   const optionsHash = [ // 用户options
     { name: "BTC" },
@@ -47,6 +47,6 @@ function App () {
       <p>{stateTest[0]}</p>
     </div>
   )
-}
+});
 
-export default App
+export default Index;

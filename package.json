@@ -1,17 +1,22 @@
 {
   "name": "test-react-select",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js",
+    "pub": "npm run build && npm publish",
     "transpile": "babel src -d dist --copy-files"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "select"],
+  "author": "CitySea",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.2",
@@ -22,27 +27,17 @@
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "eslint": "^6.4.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-loader": "^3.0.2",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^4.0.0-alpha.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.2.0",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1"
-  }
+  "dependencies": {}
 }
