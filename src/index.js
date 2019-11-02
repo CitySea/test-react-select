@@ -32,7 +32,7 @@ const Index = memo(props => {
     myGolabelOptionsInit = [];
     const optionsHash = props.attributes ? Array.isArray(props.attributes.options) ? props.attributes.options : [] : [];
 
-    myGolabelChange = props.attributes ? props.attributes.change : null;
+    myGolabelChange = props.attributes ? props.attributes.change ? props.attributes.change : () => {return true} : () => {return true} ;
     myGolabelPlaceholder = props.attributes ? props.attributes.placeholder
       ? props.attributes.placeholder
       : "select..."

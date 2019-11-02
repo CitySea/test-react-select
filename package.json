@@ -4,13 +4,16 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js",
     "pub": "npm run build && npm publish",
-    "transpile": "babel src -d dist --copy-files"
+    "transpile": "babel src -d dist --copy-files",
+    "test": "jest --config jest.config.js"
   },
-  "keywords": ["react", "select"],
+  "keywords": [
+    "react",
+    "select"
+  ],
   "author": "CitySea",
   "license": "ISC",
   "peerDependencies": {
@@ -23,12 +26,16 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^4.0.0-alpha.2",
+    "jest": "^24.9.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router": "^5.0.1",
