@@ -68,12 +68,16 @@ describe("test suite: Test component", () => {
   it("case: scrollBar", () => {
     const wrapper = mount(<Select attributes={{ options }} />);
     const _exeporSelect = wrapper.find(".exepoc-select").at(0);
-    // const _document = wrapper.find(document).at(0);
-
     _exeporSelect.simulate("click");
-    document.dispatchEvent(new Event('keydown', {keyCode: 38}));
+    // const _document = wrapper.find(document).at(0);
+    const evtObj = document.createEvent('UIEvents');
+    evtObj.initUIEvent('keydown', true, true, window, 1);
+    evtObj.key="40";
+    document.dispatchEvent(evtObj);
+    
+    // document.dispatchEvent(new Event('keydown', {key: 'Up Arrow', keyCode: 38, which: 38}));
     // document.simulate("keydown", {key: 'down', keyCode: 38, which: 38});
-    const _optionDiv = wrapper.find(".select-options div").at(8);
+    const _optionDiv = wrapper.find(".select-options div").at(0);
     console.log(_optionDiv.hasClass('hover'));
     expect(_optionDiv.exists());
     expect(_optionDiv.hasClass('hover')).toEqual(false);
