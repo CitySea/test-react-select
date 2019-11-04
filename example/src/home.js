@@ -1,10 +1,12 @@
 /* eslint-disable */
-import React , {useState, useEffect, memo} from 'react'
-import ExepocSelect from '../../src/index.js'
+import React, { useState, useEffect, memo } from "react";
+import ExepocSelect from "../../dist/index.js";
+import "../../dist/index.css";
 
-const Index =memo(() => {
-  const stateTest = useState('');
-  const optionsHash = [ // 用户options
+const Index = memo(() => {
+  const stateTest = useState("");
+  const optionsHash = [
+    // 用户options
     { name: "BTC" },
     { name: "ETH" },
     { name: "EOS", disabled: true },
@@ -17,19 +19,19 @@ const Index =memo(() => {
   ];
   const attributes = {
     options: optionsHash,
-    placeholder: '请选择',
-    emptyRecordText: '无匹配数据111',
+    placeholder: "请选择",
+    emptyRecordText: "无匹配数据111",
     isLoading: true,
     customStyle: {
       select: {
-        width: '200px',
-        height: '40px',
+        width: "200px",
+        height: "40px"
       },
       options: {
-        maxHeight: '200px'
+        maxHeight: "200px"
       }
     },
-    change: (val) => {
+    change: val => {
       stateTest[1](val.name);
     }
   };
@@ -38,15 +40,15 @@ const Index =memo(() => {
 
   useEffect(() => {
     setTimeout(() => {
-      stateAttributes[1]({...attributes, isLoading: false});
-    }, 2000)
+      stateAttributes[1]({ ...attributes, isLoading: false });
+    }, 2000);
   }, []);
   return (
     <div>
-      <ExepocSelect attributes={stateAttributes[0]}/>
+      <ExepocSelect attributes={stateAttributes[0]} />
       <p>{stateTest[0]}</p>
     </div>
-  )
+  );
 });
 
 export default Index;

@@ -1,11 +1,11 @@
 {
   "name": "test-react-select",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
-    "build": "webpack --config build/webpack.prod.conf.js",
+    "build": "rm -rf ./dist && webpack --config build/webpack.prod.conf.js",
     "pub": "npm run build && npm publish",
     "transpile": "babel src -d dist --copy-files",
     "test": "jest --config jest.config.js"
@@ -29,7 +29,6 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -38,7 +37,11 @@
     "jest": "^24.9.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "style-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "terser-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.2.0",

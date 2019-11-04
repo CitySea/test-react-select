@@ -31,6 +31,7 @@
 ```js
 import React , {useState, useEffect} from 'react';
 import TextSelect from 'test-react-select';
+import "test-react-select/dist/index.css";
 
 function App () {
   const stateTest = useState('1111');

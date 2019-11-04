@@ -1,36 +1,23 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const path = require("path");
 
 module.exports = {
-  entry: './example/src/index.js',
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'React Start',
-      template: './example/index.html'
-    }),
-  ],
+  entry: "./example/src/index.js",
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ["file-loader"]
       },
       {
         test: /\.js$/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
         // include: [path.resolve(__dirname, 'src')],
         exclude: /node_modules/
       }
     ]
   },
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.join(__dirname, '../dist')
+    filename: "[name].[contenthash].js",
+    path: path.join(__dirname, "../dist")
   }
 };
