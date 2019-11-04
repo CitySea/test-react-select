@@ -3,4 +3,7 @@ example
 .babelrc
 .gitignore
 .eslintrc.js
+__test__
+jest,config.js
+coverage
 build
