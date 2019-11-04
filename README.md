@@ -1,6 +1,6 @@
 # test-react-select
 
-[![npm version](https://badge.fury.io/js/test-react-select.svg)](https://badge.fury.io/js/test-react-select) [![Build Status](https://travis-ci.org/CitySea/test-react-select.svg?branch=master)](https://travis-ci.org/CitySea/test-react-select) [![GitHub](https://img.shields.io/github/license/CitySea/test-react-select?logoColor=success)](https://img.shields.io/badge/license-MIT-success.svg)
+[![npm version](https://badge.fury.io/js/test-react-select.svg)](https://badge.fury.io/js/test-react-select) [![Build Status](https://travis-ci.org/CitySea/test-react-select.svg?branch=master)](https://travis-ci.org/CitySea/test-react-select) [![GitHub](https://img.shields.io/github/license/CitySea/test-react-select?color=success)](https://img.shields.io/badge/license-MIT-success.svg)
 
 ###  :tada: For version >= 2.0.0, please update react and react-dom to at least ```16.8.6```, since it is rewrited with hooks.
 ```js
