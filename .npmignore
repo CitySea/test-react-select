@@ -7,3 +7,4 @@ __test__
 jest,config.js
 coverage
 build
+package-lock.json
