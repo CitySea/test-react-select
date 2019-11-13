@@ -18,7 +18,7 @@ const Index = memo(props => {
   const stateInputValue = useState("");
   const stateInputPlaceholder = useState("");
   const stateOptionsHash = useState([]);
-  const stateHoverIndex = useState(-1);
+  const stateHoverIndex = useState(myGolabelHoverIndex);
   const stateIsLoading = useState(false);
   const selectRef = useRef(null);
   const inputRef = useRef(null);
@@ -53,6 +53,7 @@ const Index = memo(props => {
   }, [myGolabelInit]);
 
   useEffect(() => {
+    
     if (!stateShowOptions[0]) {
       myGolabelEnterStatus = myGolabelEnterHide;
       inputRef["current"]["readOnly"] = true;
@@ -260,8 +261,7 @@ const Index = memo(props => {
     stateHoverIndex[1](myGolabelHoverIndex);
     // 计算滚动条位置
     if (
-      optionsRef.current.clientHeight !== optionsRef.current.scrollHeight &&
-      optionRef.current !== null
+      optionRef.current !== null && optionsRef.current.clientHeight !== optionsRef.current.scrollHeight
     ) {
       if (type === "prev") {
         const offset =
@@ -339,6 +339,7 @@ const Index = memo(props => {
 const getScrollWidth = () => {
   let scrollBarWidth = 0;
   const outer = document.createElement("div");
+  
   outer.style.width = "100px";
   outer.style.visibility = "hidden";
   outer.style.position = "absolute";
@@ -346,6 +347,7 @@ const getScrollWidth = () => {
   document.body.appendChild(outer);
 
   const widthNoScroll = outer.offsetWidth;
+  
   outer.style.overflow = "scroll";
 
   const inner = document.createElement("div");

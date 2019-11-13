@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect, memo } from "react";
-import ExepocSelect from "../../dist/index.js";
-import "../../dist/index.css";
+import ExepocSelect from "../../src/index.js";
+import "../../src/index.css";
 
 const Index = memo(() => {
   const stateTest = useState("");
@@ -21,16 +21,7 @@ const Index = memo(() => {
     options: optionsHash,
     placeholder: "请选择",
     emptyRecordText: "无匹配数据111",
-    isLoading: true,
-    customStyle: {
-      select: {
-        width: "200px",
-        height: "40px"
-      },
-      options: {
-        maxHeight: "200px"
-      }
-    },
+    isLoading: false,
     change: val => {
       stateTest[1](val.name);
     }
