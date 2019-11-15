@@ -195,3 +195,17 @@
   height: 14px;
   background: #0098FC;
 }
+
+.test1 {
+  background-image: url(23a3dd8d53f262071ada596a6989b819.png);
+  width: 20px;
+  height: 14px;
+  background-position: -5131px 0;
+}
+
+.test2 {
+  background-image: url(23a3dd8d53f262071ada596a6989b819.png);
+  width: 20px;
+  height: 14px;
+  background-position:  -1049px 0;
+}
