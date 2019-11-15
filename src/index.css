@@ -20,6 +20,12 @@
   width: 160px;
 }
 
+.select-left-icon {
+  margin-right: 6px;
+  width: 20px;
+  height: 14px;
+}
+
 .select-value.light {
   color: #BBB;
 }
@@ -182,4 +188,10 @@
 
 .flex-space-between {
   justify-content: space-between;
+}
+
+.default {
+  width: 20px;
+  height: 14px;
+  background: #0098FC;
 }

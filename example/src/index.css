@@ -1,0 +1,13 @@
+.test1 {
+  background-image: url('./flags.png');
+  width: 20px;
+  height: 14px;
+  background-position: -5131px 0;
+}
+
+.test2 {
+  background-image: url('./flags.png');
+  width: 20px;
+  height: 14px;
+  background-position:  -1049px 0;
+}

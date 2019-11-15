@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
     "build": "rm -rf ./dist && webpack --config build/webpack.prod.conf.js",
+    "deploy": "rm -rf ./dist && webpack --config build/webpack.deploy.conf.js && sh ./deploy.sh test-react-select gh-pages",
     "pub": "npm run build && npm publish",
     "transpile": "babel src -d dist --copy-files",
     "test": "jest --config jest.config.js"

@@ -2,6 +2,7 @@ import React, { memo, useState, useCallback, useRef, useEffect } from "react";
 import View from "./view.js";
 
 let myGolabelSelectedName = ""; // 已选中label
+let myGolabelIcon = "";
 let myGolabelInit = true; // 第一次绑定事件flag
 let myGolabelHoverIndex = -1; // 当前hover
 let myGolabelOptionsHash = []; // options
@@ -15,6 +16,8 @@ let myGolabelOptionsInit = [];
 
 const Index = memo(props => {
   const stateShowOptions = useState(false);
+  const stateShowIcon = useState(false);
+  const stateIconClass = useState('');
   const stateInputValue = useState("");
   const stateInputPlaceholder = useState("");
   const stateOptionsHash = useState([]);
@@ -44,6 +47,7 @@ const Index = memo(props => {
     stateOptionsHash[1]([...myGolabelOptionsInit]);
     stateInputPlaceholder[1](myGolabelPlaceholder);
     stateIsLoading[1](props.attributes ? props.attributes.isLoading : false);
+    stateShowIcon[1](props.attributes ? props.attributes.showIcon : false)
   }, [props.attributes]);
 
   useEffect(() => {
@@ -169,7 +173,8 @@ const Index = memo(props => {
       stateShowOptions[1](false);
       myGolabelHoverIndex = obj.index;
       stateHoverIndex[1](myGolabelHoverIndex);
-
+      stateIconClass[1](obj.icon);
+      myGolabelIcon = obj.icon;
       const tempHash = getOptionsHash(stateOptionsHash[0], obj.name);
       myGolabelOptionsHash = [...tempHash];
       stateOptionsHash[1]([...tempHash]);
@@ -187,6 +192,7 @@ const Index = memo(props => {
 
   const handleChangeInputValue = val => {
     stateInputValue[1](val);
+    stateIconClass[1](val === '' ? myGolabelIcon : "");
     let searchOptionsHash = [];
     myGolabelOptionsInit.forEach(item => {
       if (item.name.indexOf(val) > -1) {
@@ -258,6 +264,7 @@ const Index = memo(props => {
           ? 0
           : myGolabelHoverIndex + 1;
     }
+    stateIconClass[1](myGolabelOptionsHash[myGolabelHoverIndex].icon);
     stateHoverIndex[1](myGolabelHoverIndex);
     // 计算滚动条位置
     if (
@@ -299,12 +306,12 @@ const Index = memo(props => {
     }
   };
 
-  const getTargetNode = (clicke, target) => {
+  const getTargetNode = (clicker, target) => {
     // 点击区域是否包含在元素内
-    if (!clicke || clicke === document) {
+    if (!clicker || clicker === document) {
       return false;
     }
-    return clicke === target ? true : getTargetNode(clicke.parentNode, target);
+    return clicker === target ? true : getTargetNode(clicker.parentNode, target);
   };
   return (
     <View
@@ -314,7 +321,9 @@ const Index = memo(props => {
         stateShowOptions,
         stateOptionsHash,
         stateHoverIndex,
-        stateIsLoading
+        stateIsLoading,
+        stateShowIcon,
+        stateIconClass
       }}
       handlers={{
         handleChangeShowStatus,

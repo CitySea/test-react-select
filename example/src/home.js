@@ -2,13 +2,14 @@
 import React, { useState, useEffect, memo } from "react";
 import ExepocSelect from "../../src/index.js";
 import "../../src/index.css";
+import "./index.css";
 
 const Index = memo(() => {
   const stateTest = useState("");
   const optionsHash = [
     // 用户options
-    { name: "BTC" },
-    { name: "ETH" },
+    { icon: 'test1', name: "BTC" },
+    { icon: 'test2', name: "ETH" },
     { name: "EOS", disabled: true },
     { name: "BTC2" },
     { name: "ETH3" },
@@ -19,6 +20,7 @@ const Index = memo(() => {
   ];
   const attributes = {
     options: optionsHash,
+    showIcon: true,
     placeholder: "请选择",
     emptyRecordText: "无匹配数据111",
     isLoading: false,
