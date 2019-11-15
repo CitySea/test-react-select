@@ -8,6 +8,7 @@
     "build": "rm -rf ./dist && webpack --config build/webpack.prod.conf.js",
     "pub": "npm run build && npm publish",
     "transpile": "babel src -d dist --copy-files",
+    "deploy": "rm -rf ./dist && webpack --config build/webpack.deploy.conf.js && sh ./deploy.sh",
     "test": "jest --config jest.config.js"
   },
   "keywords": [
