@@ -20,12 +20,6 @@
   width: 160px;
 }
 
-.select-left-icon {
-  margin-right: 6px;
-  width: 20px;
-  height: 14px;
-}
-
 .select-value.light {
   color: #BBB;
 }
@@ -82,6 +76,13 @@
 .select-options-wrapper {
   overflow: hidden;
   position: relative;
+}
+
+.select-left-icon {
+  margin-right: 6px;
+  max-width: 30px;
+  max-height: 20px;
+  overflow: hidden;
 }
 
 .select-options {
@@ -190,22 +191,16 @@
   justify-content: space-between;
 }
 
-.default {
-  width: 20px;
-  height: 14px;
-  background: #0098FC;
-}
-
 .test1 {
   background-image: url(23a3dd8d53f262071ada596a6989b819.png);
   width: 20px;
   height: 14px;
-  background-position: -5131px 0;
+  background-position: -1049px 0;
 }
 
 .test2 {
   background-image: url(23a3dd8d53f262071ada596a6989b819.png);
   width: 20px;
   height: 14px;
-  background-position:  -1049px 0;
+  background-position: -2171px  0;
 }
