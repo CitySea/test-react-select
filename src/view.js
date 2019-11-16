@@ -16,7 +16,9 @@ const Index = memo(props => {
     stateShowOptions,
     stateOptionsHash,
     stateHoverIndex,
-    stateIsLoading
+    stateIsLoading,
+    stateShowIcon,
+    stateIconClass
   } = states;
   const {
     handleChangeShowStatus,
@@ -40,6 +42,7 @@ const Index = memo(props => {
         }}
         ref={selectRef}
       >
+        {stateShowIcon[0] && <div className="select-left-icon"><div className={stateIconClass[0]}></div></div>}
         <div
           className="select-value flex flex-center-y flex-start-x light"
           style={customStyle && { ...customStyle.select }}
@@ -75,6 +78,8 @@ const Index = memo(props => {
         stateShowOptions={stateShowOptions}
         stateHoverIndex={stateHoverIndex}
         stateIsLoading={stateIsLoading}
+        stateShowIcon={stateShowIcon}
+        stateIconClass={stateIconClass}
         handleSelect={handleSelect}
         optionsRef={optionsRef}
         scrollBarWrapperRef={scrollBarWrapperRef}
@@ -93,6 +98,8 @@ const SelectOptions = memo(
     stateShowOptions,
     stateHoverIndex,
     stateIsLoading,
+    stateShowIcon,
+    stateIconClass,
     handleSelect,
     optionsRef,
     scrollBarWrapperRef,
@@ -127,7 +134,10 @@ const SelectOptions = memo(
                     }
                   }}
                 >
-                  {item.name}
+                  <div className="flex flex-center-y">
+                    {stateShowIcon[0] && <div className={item.icon} style={{marginRight: '8px'}}></div>}
+                    <div>{item.name}</div>
+                  </div>
                 </div>
               );
             })}

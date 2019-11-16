@@ -78,6 +78,13 @@
   position: relative;
 }
 
+.select-left-icon {
+  margin-right: 6px;
+  max-width: 30px;
+  max-height: 20px;
+  overflow: hidden;
+}
+
 .select-options {
   height: 100%;
   padding: 6px 0px;
